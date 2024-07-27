@@ -1,0 +1,47 @@
+---
+import DescriptionDetails from './DescriptionDetails.astro';
+
+interface Props {
+	etc?: boolean;
+}
+
+const { etc } = Astro.props;
+---
+
+<div class="term">
+	<slot name="term" />
+</div>
+<div class:list={ ['descriptions', {etc: etc}] }>
+	<slot name="descriptions"/>
+</div>
+
+<style>
+	.term {
+		grid-column: 1;
+		display: grid;
+		place-items: center;
+		max-width: 40cqi;
+		padding-block: 0.5lh;
+		padding-inline: 1em;
+		border-radius: 0.25em 0 0 0.25em;
+		background-color: var(--color-gray-light);
+		color: var(--color-black);
+		font-weight: bold;
+	}
+	.descriptions {
+		grid-column: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-block: 0.25lh;
+		padding-inline: 1em;
+		border-radius: 0 0.25em 0.25em 0;
+		background-color: var(--color-gray-dark);
+
+		&.etc::after {
+			content: "etc.";
+			display: block;
+			opacity: 0.75;
+		}
+	}
+</style>
