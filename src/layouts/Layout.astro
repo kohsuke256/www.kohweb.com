@@ -12,7 +12,7 @@ const pageTitleSuffix = "kohweb.com";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
 		{description && <meta name="description" content={description} />}
@@ -67,9 +67,20 @@ const pageTitleSuffix = "kohweb.com";
 		.main {
 			grid-area: main;
 
+			@supports (word-break: auto-phrase) {
+				h1, h2, h3, h4, h5, h6 {
+					word-break: auto-phrase;
+				}
+			}
 			h2 {
-				border-block-end: 1px solid var(--color-accent-dark);
+				border-block-end: 1px solid var(--color-accent-light);
 				border-inline-start: 0.25em solid var(--color-accent-light);
+				padding-block-end: 4px;
+				padding-inline-start: 0.5em;
+			}
+			h3 {
+				border-block-end: 1px solid var(--color-accent-dark);
+				border-inline-start: 0.25em solid var(--color-accent-dark);
 				padding-block-end: 4px;
 				padding-inline-start: 0.5em;
 			}
