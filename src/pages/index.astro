@@ -1,5 +1,10 @@
 ---
+import DescriptionDetails from '../components/common/DescriptionDetails.astro';
+import DescriptionList from '../components/common/DescriptionList.astro';
+import DescriptionPair from '../components/common/DescriptionPair.astro';
+import DescriptionTerm from '../components/common/DescriptionTerm.astro';
 import Layout from '../layouts/Layout.astro';
+
 ---
 
 <Layout title="Home">
@@ -8,5 +13,32 @@ import Layout from '../layouts/Layout.astro';
 		<p>
 			このサイトは、フロントエンドの練習と実益を兼ねて作られた、突貫工事の実験作です。
 		</p>
+	</section>
+	<section>
+		<h2>Profile</h2>
+		<DescriptionList>
+			<DescriptionPair>
+				<DescriptionTerm slot="term">
+					名前
+				</DescriptionTerm>
+				<DescriptionDetails slot="descriptions">
+					コウスケ
+				</DescriptionDetails>
+				<DescriptionDetails slot="descriptions">
+					Kohsuke
+				</DescriptionDetails>
+			</DescriptionPair>
+			<DescriptionPair etc>
+				<DescriptionTerm slot="term">
+					所属
+				</DescriptionTerm>
+				<DescriptionDetails slot="descriptions">
+					電気通信大学 情報理工学域
+				</DescriptionDetails>
+				<DescriptionDetails slot="descriptions">
+					バーチャルライブ研究会
+				</DescriptionDetails>
+			</DescriptionPair>
+		</DescriptionList>
 	</section>
 </Layout>
