@@ -4,6 +4,8 @@ import DescriptionList from '../components/common/DescriptionList.astro';
 import DescriptionPair from '../components/common/DescriptionPair.astro';
 import DescriptionTerm from '../components/common/DescriptionTerm.astro';
 import ExternalLink from '../components/common/ExternalLink.astro';
+import HistoryRecord from '../components/common/HistoryRecord.astro';
+import HistoryRecordEvent from '../components/common/HistoryRecordEvent.astro';
 import Layout from '../layouts/Layout.astro';
 
 ---
@@ -29,6 +31,14 @@ import Layout from '../layouts/Layout.astro';
 					Kohsuke
 				</DescriptionDetails>
 			</DescriptionPair>
+			<DescriptionPair>
+				<DescriptionTerm slot="term">
+					生年
+				</DescriptionTerm>
+				<DescriptionDetails slot="descriptions">
+					<time datetime="2005">2005年</time>
+				</DescriptionDetails>
+			</DescriptionPair>
 			<DescriptionPair etc>
 				<DescriptionTerm slot="term">
 					所属
@@ -37,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
 					<ExternalLink href="https://www.uec.ac.jp/">電気通信大学</ExternalLink> 情報理工学域
 				</DescriptionDetails>
 				<DescriptionDetails slot="descriptions">
-					<ExternalLink href="https://mikuec.com/">バーチャルライブ研究会</ExternalLink>
+					<ExternalLink href="https://mikuec.com/">バーチャルライブ研究会</ExternalLink>（通称：<abbr title="Virtual Live Lab">VLL</abbr>）
 				</DescriptionDetails>
 			</DescriptionPair>
 			<DescriptionPair etc>
@@ -45,9 +55,122 @@ import Layout from '../layouts/Layout.astro';
 					資格・試験
 				</DescriptionTerm>
 				<DescriptionDetails slot="descriptions">
-					応用情報技術者試験 合格
+					応用情報技術者試験（<abbr title="Applied Information Technology Engineer Examination">AP</abbr>） 合格
 				</DescriptionDetails>
 			</DescriptionPair>
 		</DescriptionList>
+	</section>
+	<section>
+		<h2>History</h2>
+		<p>
+			簡単に私の経歴を示しておきます。
+		</p>
+		<p>
+			大した経験はありませんが、参考まで。
+		</p>
+		<HistoryRecord>
+			<HistoryRecordEvent year={2013}>
+				<p>
+					<ExternalLink href="https://scratch.mit.edu">Scratch</ExternalLink> にユーザー登録
+				</p>
+				<p>
+					ある種、私のプログラミングはここから始まったといえる。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2014}>
+				<p>
+					<ExternalLink href="https://scratch.mit.edu">Raspberry Pi</ExternalLink> に手を出す
+				</p>
+				<p>
+					同梱されている Minecraft PI Edition では、Python などのプログラムからゲームに干渉することができた。
+				</p>
+				<p>
+					ちょうどこの頃、日本でも Minecraft が流行していた。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2020} month={2}>
+				<p>
+					<ExternalLink href="https://www.uec-programming.com">とあるプログラミング教室</ExternalLink>に入会
+				</p>
+				<p>
+					ただのお遊びだったプログラミングを本格的に学ぶきっかけとなった。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2020} month={3}>
+				<p>
+					日本でも新型コロナウイルス感染症が流行しだす
+				</p>
+				<p>
+					それに伴いプログラミング教室がオンラインになった。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2020} month={10}>
+				<p>
+					ITパスポート試験 合格
+				</p>
+				<p>
+					高校受験の出願書類に書けるような資格がなにか欲しいと思っていた矢先、プログラミング教室で存在をこの資格の存在を知ったので取った。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2021}>
+				<p>
+					ウェブ技術について学習しだす
+				</p>
+				<p>
+					<ExternalLink href="https://www.gakuryokuup.com">とあるアプリコンテスト</ExternalLink>にエントリーするため。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2022} month={6}>
+				<p>
+					基本情報技術者試験 合格
+				</p>
+				<p>
+					高校生活にも慣れて時間ができたので取った。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2023} month={4}>
+				<p>
+					競技プログラミングに取り組み始める
+				</p>
+				<p>
+					<ExternalLink href="https://atcoder.jp">AtCoder</ExternalLink> のコンテストに定期的に参加するようになる。
+				</p>
+				<p>
+					<time datetime="2024-02">2024年2月</time>に Rating 最高値：1631（青）を達成するものの、<time datetime="2024-07">2024年7月</time>現在、水色まで低迷中。（<ExternalLink href="https://atcoder.jp/users/kohsuke256">プロフィールページ</ExternalLink>）
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2023} month={6}>
+				<p>
+					応用情報技術者試験 合格
+				</p>
+				<p>
+					客観的に技術系の知識があることを示すため、より高度な情報処理技術者試験に挑戦した。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2023} month={9}>
+				<p>
+					文化祭用簡易的なデジタルサイネージ配信システムを構築
+				</p>
+				<p>
+					前年度末から動き出し、なんとか PR 動画や人気投票の推移などを映すシステムをほぼワンオペで完成させた。高校の文化祭は、やりたいものをやったもん勝ち。青春だから。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2024} month={4}>
+				<p>
+					<ExternalLink href="https://www.uec.ac.jp/">電気通信大学</ExternalLink>に入学
+				</p>
+				<p>
+					<attr>VLL</attr> をはじめとしたサークルに入部する。
+				</p>
+			</HistoryRecordEvent>
+			<HistoryRecordEvent year={2024} month={7}>
+				<p>
+					このサイトを制作開始
+				</p>
+				<p>
+					<attr>VLL</attr> でも使われている技術を練習として実験的に使ってみた。
+				</p>
+			</HistoryRecordEvent>
+		</HistoryRecord>
 	</section>
 </Layout>
