@@ -3,6 +3,7 @@ import DescriptionDetails from '../components/common/DescriptionDetails.astro';
 import DescriptionList from '../components/common/DescriptionList.astro';
 import DescriptionPair from '../components/common/DescriptionPair.astro';
 import DescriptionTerm from '../components/common/DescriptionTerm.astro';
+import ExternalLink from '../components/common/ExternalLink.astro';
 import Layout from '../layouts/Layout.astro';
 
 ---
@@ -33,10 +34,10 @@ import Layout from '../layouts/Layout.astro';
 					所属
 				</DescriptionTerm>
 				<DescriptionDetails slot="descriptions">
-					電気通信大学 情報理工学域
+					<ExternalLink href="https://www.uec.ac.jp/">電気通信大学</ExternalLink> 情報理工学域
 				</DescriptionDetails>
 				<DescriptionDetails slot="descriptions">
-					バーチャルライブ研究会
+					<ExternalLink href="https://mikuec.com/">バーチャルライブ研究会</ExternalLink>
 				</DescriptionDetails>
 			</DescriptionPair>
 		</DescriptionList>
