@@ -1,0 +1,130 @@
+---
+interface Props {
+	year: number;
+	month?: number;
+}
+
+const { year, month } = Astro.props;
+const datetime = month !== undefined ? `${year}-${('0' + month).slice(-2)}` : `${year}`;
+---
+
+<div>
+	<dt>
+		<time datetime={datetime}>
+			<span class="year">
+				<span>
+					{year}<span class="unit">年</span>
+				</span>
+			</span>
+			{ month !== undefined &&
+				<span class="month">
+					<span>
+						{month}<span class="unit">月</span>
+					</span>
+				</span>
+			}
+		</time>
+	</dt>
+	<dd>
+		<slot />
+	</dd>
+</div>
+
+<style>
+	div {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto;
+		margin-block-start: 0.5em;
+		margin-inline-start: 1.5em;
+		place-items: start;
+		gap: 16px;
+		border: 1px solid var(--color-gray-light);
+		border-radius: 0.5em;
+		background-color: var(--color-gray-dark)
+	}
+
+	dt {
+		grid-area: 1 / 1;
+		display: grid;
+		position: relative;
+		margin-block-start: -0.5em;
+		margin-block-end: 0.5em;
+		margin-inline-start: -1.5em;
+		font-weight: bold;
+		
+		&:has(.month) {
+			grid-template-columns: 1fr 2em auto;
+			grid-template-rows: 1fr 1em auto;
+			grid-template-areas: "year year l" "year year l" "b b m";
+		}
+		&:not(:has(.month)) {
+			grid-template-columns: auto;
+			grid-template-rows: auto;
+			grid-template-areas: "year";
+		}
+		
+		time {
+			display: contents;
+		}
+		.year, .month {
+			display: grid;
+			width: fit-content;
+			padding-inline: 0.5em;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			place-items: center;
+			white-space: nowrap;
+			border: 1px solid var(--color-gray-light);
+		}
+		.year {
+			grid-area: year;
+			position: relative;
+			background-color: var(--color-accent-dark);
+			font-size: 1.25em;
+		}
+		.month {
+			grid-area: 2 / 2 / 4 / 4;
+			position: relative;
+			background-color: var(--color-gray-dark);
+		}
+		.unit {
+			font-size: 0.75em;
+		}
+	}
+
+	dd {
+		grid-area: 1 / 2;
+		margin-inline-start: 0;
+		padding-block: 0.5lh;
+		padding-inline-end: 1em;
+	}
+	dd > :global(:first-child) {
+	   font-size: 1.2em;
+	}
+	dd > :global(p:first-child) {
+	   margin-block-start: 0;
+	}
+	dd > :global(p:last-child) {
+	   margin-block-end: 0;
+	}
+
+	div:not(:last-child) {
+		position: relative;
+		margin-block-end: calc(8px + 1em);
+		
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: calc(100% + 1em);
+			right: 0;
+			left: 0;
+			margin-inline: auto;
+			width: 2em;
+			height: 1em;
+			clip-path: polygon(0 0, 100% 0, 50% 100%);
+			background-color: var(--color-accent-dark);
+		}
+	}
+</style>
