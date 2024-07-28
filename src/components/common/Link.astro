@@ -1,0 +1,23 @@
+---
+interface Props {
+	href: string;
+	[key: string]: any;
+}
+
+const { href, ...attrs } = Astro.props;
+---
+
+<a href={href} {...attrs}>
+	<slot />
+</a>
+
+<style>
+	a {
+		color: var(--color-accent-light);
+		text-decoration: inherit;
+		background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+		background-position: 0 100%;
+		background-repeat: no-repeat;
+		background-size: 100% 1px;
+	}
+</style>
