@@ -6,7 +6,10 @@ import DescriptionTerm from '../components/common/DescriptionTerm.astro';
 import ExternalLink from '../components/common/ExternalLink.astro';
 import HistoryRecord from '../components/common/HistoryRecord.astro';
 import HistoryRecordEvent from '../components/common/HistoryRecordEvent.astro';
+import InlineImage from '../components/common/InlineImage.astro';
 import Layout from '../layouts/Layout.astro';
+
+import EmailAdressImage from '../assets/texts/email.svg';
 
 ---
 
@@ -56,6 +59,14 @@ import Layout from '../layouts/Layout.astro';
 				</DescriptionTerm>
 				<DescriptionDetails slot="descriptions">
 					応用情報技術者試験（<abbr title="Applied Information Technology Engineer Examination">AP</abbr>） 合格
+				</DescriptionDetails>
+			</DescriptionPair>
+			<DescriptionPair>
+				<DescriptionTerm slot="term">
+					連絡先
+				</DescriptionTerm>
+				<DescriptionDetails slot="descriptions">
+					<InlineImage src={EmailAdressImage.src} alt="スパム対策のため画像化されたメールアドレス" />
 				</DescriptionDetails>
 			</DescriptionPair>
 		</DescriptionList>
