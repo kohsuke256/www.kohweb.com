@@ -12,10 +12,10 @@ importers:
         specifier: ^0.8.3
         version: 0.8.3(typescript@5.7.2)
       '@astrojs/react':
-        specifier: ^3.6.0
+        specifier: ^3.6.3
         version: 3.6.3(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       astro:
-        specifier: ^4.12.2
+        specifier: ^4.16.18
         version: 4.16.18(rollup@4.29.1)(typescript@5.7.2)
       react:
         specifier: ^18.3.1
@@ -24,7 +24,7 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       typescript:
-        specifier: ^5.5.4
+        specifier: ^5.7.2
         version: 5.7.2
 
 packages:
