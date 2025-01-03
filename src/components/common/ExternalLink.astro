@@ -7,12 +7,12 @@ interface Props {
   [key: string]: any;
 }
 
-const { href, ...attrs } = Astro.props;
+const { href, target='_blank', ...attrs } = Astro.props;
 ---
 
-<Link href={href} {...attrs}>
-  <slot />
-  <img src={ExternalLinkIcon.src} alt="外部リンク" />
+<Link {href} {target} {...attrs}>
+	<slot />
+	<img src={ExternalLinkIcon.src} alt="外部リンク" />
 </Link>
 
 <style>
