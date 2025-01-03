@@ -1,10 +1,10 @@
 ---
-import Link from './Link.astro';
-import ExternalLinkIcon from '../../assets/icons/external-link.svg';
+import Link from "./Link.astro";
+import ExternalLinkIcon from "../../assets/icons/external-link.svg";
 
 interface Props {
-	href: string;
-	[key: string]: any;
+  href: string;
+  [key: string]: any;
 }
 
 const { href, target='_blank', ...attrs } = Astro.props;
@@ -16,8 +16,8 @@ const { href, target='_blank', ...attrs } = Astro.props;
 </Link>
 
 <style>
-	img {
-		display: inline-block;
-		height: 1em;
-	}
+  img {
+    display: inline-block;
+    height: 1em;
+  }
 </style>
