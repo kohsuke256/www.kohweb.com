@@ -1,10 +1,10 @@
 ---
-import Header from './Header.astro';
-import Footer from './Footer.astro';
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
 
 interface Props {
-	description?: string;
-	title: string;
+  description?: string;
+  title: string;
 }
 
 const { description, title } = Astro.props;
@@ -13,90 +13,102 @@ const pageTitleSuffix = "kohweb.com";
 
 <!doctype html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		{description && <meta name="description" content={description} />}
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | {pageTitleSuffix}</title>
-	</head>
-	<body>
-		<Header />
-		<main class="main">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    {description && <meta name="description" content={description} />}
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | {pageTitleSuffix}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
 <style is:global>
-	*, *::before, *::after {
-		box-sizing: border-box;
-	}
-	
-	:root {
-		--color-black: #232629;
-		--color-white: #fcfcfc;
-		--color-gray-dark: #44474a;
-		--color-gray-light: #dddfe1;
-		--color-accent-dark: #0b6c90;
-		--color-accent-light: #42c5f5;
-	}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-	html, body {
-		margin: 0;
-		padding: 0;
-	}
+  :root {
+    --color-black: #232629;
+    --color-white: #fcfcfc;
+    --color-gray-dark: #44474a;
+    --color-gray-light: #dddfe1;
+    --color-accent-dark: #0b6c90;
+    --color-accent-light: #42c5f5;
+  }
 
-	html {
-		font-family: system-ui, sans-serif;
-		background: var(--color-black);
-		color: var(--color-white);
-		line-height: 1.1lh;
-	}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-	body {
-		--max-main-width: 800px;
-		display: grid;
-		min-block-size: 100vh;
-		grid-template-columns: 1fr minmax(auto, var(--max-main-width)) 1fr;
-		grid-template-rows: auto 1fr auto;
-		gap: 16px;
-		grid-template-areas: "header header header" "left main right" "footer footer footer";
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.1lh;
+  }
 
-		.header {
-			grid-area: header;
-			padding-inline: clamp(16px, calc((100vw - var(--max-main-width)) / 2), 32px);
-		}
-		.main {
-			grid-area: main;
+  body {
+    --max-main-width: 800px;
+    display: grid;
+    min-block-size: 100vh;
+    grid-template-columns: 1fr minmax(auto, var(--max-main-width)) 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+    grid-template-areas: "header header header" "left main right" "footer footer footer";
 
-			@supports (word-break: auto-phrase) {
-				h1, h2, h3, h4, h5, h6 {
-					word-break: auto-phrase;
-				}
-			}
-			h2 {
-				border-block-end: 1px solid var(--color-accent-light);
-				border-inline-start: 0.25em solid var(--color-accent-light);
-				padding-block-end: 4px;
-				padding-inline-start: 0.5em;
-			}
-			h3 {
-				border-block-end: 1px solid var(--color-accent-dark);
-				border-inline-start: 0.25em solid var(--color-accent-dark);
-				padding-block-end: 4px;
-				padding-inline-start: 0.5em;
-			}
-		}
-		.footer {
-			grid-area: footer;
-			padding-block: 2lh;
-			padding-inline: max(16px, calc((100% - var(--max-main-width)) / 2));
+    .header {
+      grid-area: header;
+      padding-inline: clamp(
+        16px,
+        calc((100vw - var(--max-main-width)) / 2),
+        32px
+      );
+    }
+    .main {
+      grid-area: main;
 
-			small {
-				display: block;
-				text-align: center;
-			}
-		}
-	}
+      @supports (word-break: auto-phrase) {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          word-break: auto-phrase;
+        }
+      }
+      h2 {
+        border-block-end: 1px solid var(--color-accent-light);
+        border-inline-start: 0.25em solid var(--color-accent-light);
+        padding-block-end: 4px;
+        padding-inline-start: 0.5em;
+      }
+      h3 {
+        border-block-end: 1px solid var(--color-accent-dark);
+        border-inline-start: 0.25em solid var(--color-accent-dark);
+        padding-block-end: 4px;
+        padding-inline-start: 0.5em;
+      }
+    }
+    .footer {
+      grid-area: footer;
+      padding-block: 2lh;
+      padding-inline: max(16px, calc((100% - var(--max-main-width)) / 2));
+
+      small {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
 </style>
