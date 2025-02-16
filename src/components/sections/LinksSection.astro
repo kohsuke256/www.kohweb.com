@@ -1,0 +1,34 @@
+---
+import DescriptionDetails from "../common/DescriptionDetails.astro";
+import DescriptionList from "../common/DescriptionList.astro";
+import DescriptionPair from "../common/DescriptionPair.astro";
+import DescriptionTerm from "../common/DescriptionTerm.astro";
+import ExternalLink from "../common/ExternalLink.astro";
+---
+
+<section>
+  <h2>Links</h2>
+  <DescriptionList>
+    <DescriptionPair>
+      <DescriptionTerm slot="term"> GitHub </DescriptionTerm>
+      <DescriptionDetails slot="descriptions">
+        <ExternalLink href="https://github.com/kohsuke256"
+          >@kohsuke256</ExternalLink
+        >
+      </DescriptionDetails>
+    </DescriptionPair>
+    <DescriptionPair>
+      <DescriptionTerm slot="term"> X (Twitter) </DescriptionTerm>
+      <DescriptionDetails slot="descriptions">
+        <ExternalLink href="https://x.com/kohsuke256"
+          >@kohsuke256</ExternalLink
+        > (VLL 人格など)
+      </DescriptionDetails>
+      <DescriptionDetails slot="descriptions">
+        <ExternalLink href="https://x.com/kohsuke255"
+          >@kohsuke255</ExternalLink
+        > (日常人格など)
+      </DescriptionDetails>
+    </DescriptionPair>
+  </DescriptionList>
+</section>
