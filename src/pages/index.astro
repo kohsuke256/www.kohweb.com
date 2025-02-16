@@ -1,91 +1,12 @@
 ---
-import DescriptionDetails from "../components/common/DescriptionDetails.astro";
-import DescriptionList from "../components/common/DescriptionList.astro";
-import DescriptionPair from "../components/common/DescriptionPair.astro";
-import DescriptionTerm from "../components/common/DescriptionTerm.astro";
-import ExternalLink from "../components/common/ExternalLink.astro";
-import InlineImage from "../components/common/InlineImage.astro";
 import Layout from "../layouts/Layout.astro";
-
-import EmailAdressImage from "../assets/texts/email.svg";
+import AboutSection from "../components/sections/AboutSection.astro";
+import LinksSection from "../components/sections/LinksSection.astro";
+import ProfileSection from "../components/sections/ProfileSection.astro";
 ---
 
 <Layout title="Home">
-  <section>
-    <h2>About</h2>
-    <p>
-      このサイトは、フロントエンドの練習と実益を兼ねて作られた、突貫工事の実験作です。
-    </p>
-  </section>
-  <section>
-    <h2>Profile</h2>
-    <DescriptionList>
-      <DescriptionPair>
-        <DescriptionTerm slot="term"> 名前 </DescriptionTerm>
-        <DescriptionDetails slot="descriptions"> コウスケ </DescriptionDetails>
-        <DescriptionDetails slot="descriptions"> Kohsuke </DescriptionDetails>
-      </DescriptionPair>
-      <DescriptionPair>
-        <DescriptionTerm slot="term"> 生年 </DescriptionTerm>
-        <DescriptionDetails slot="descriptions">
-          <time datetime="2005">2005年</time>
-        </DescriptionDetails>
-      </DescriptionPair>
-      <DescriptionPair etc>
-        <DescriptionTerm slot="term"> 所属 </DescriptionTerm>
-        <DescriptionDetails slot="descriptions">
-          <ExternalLink href="https://www.uec.ac.jp/">電気通信大学</ExternalLink
-          > 情報理工学域
-        </DescriptionDetails>
-        <DescriptionDetails slot="descriptions">
-          <ExternalLink href="https://mikuec.com/"
-            >バーチャルライブ研究会</ExternalLink
-          >（通称：<abbr title="Virtual Live Lab">VLL</abbr>）
-        </DescriptionDetails>
-      </DescriptionPair>
-      <DescriptionPair etc>
-        <DescriptionTerm slot="term"> 資格・試験 </DescriptionTerm>
-        <DescriptionDetails slot="descriptions">
-          応用情報技術者試験（<abbr
-            title="Applied Information Technology Engineer Examination">AP</abbr
-          >） 合格
-        </DescriptionDetails>
-      </DescriptionPair>
-      <DescriptionPair>
-        <DescriptionTerm slot="term"> 連絡先 </DescriptionTerm>
-        <DescriptionDetails slot="descriptions">
-          <InlineImage
-            src={EmailAdressImage.src}
-            alt="スパム対策のため画像化されたメールアドレス"
-          />
-        </DescriptionDetails>
-      </DescriptionPair>
-    </DescriptionList>
-  </section>
-  <section>
-    <h2>Links</h2>
-    <DescriptionList>
-      <DescriptionPair>
-        <DescriptionTerm slot="term"> GitHub </DescriptionTerm>
-        <DescriptionDetails slot="descriptions">
-          <ExternalLink href="https://github.com/kohsuke256"
-            >@kohsuke256</ExternalLink
-          >
-        </DescriptionDetails>
-      </DescriptionPair>
-      <DescriptionPair>
-        <DescriptionTerm slot="term"> X (Twitter) </DescriptionTerm>
-        <DescriptionDetails slot="descriptions">
-          <ExternalLink href="https://x.com/kohsuke256"
-            >@kohsuke256</ExternalLink
-          > (VLL 人格など)
-        </DescriptionDetails>
-        <DescriptionDetails slot="descriptions">
-          <ExternalLink href="https://x.com/kohsuke255"
-            >@kohsuke255</ExternalLink
-          > (日常人格など)
-        </DescriptionDetails>
-      </DescriptionPair>
-    </DescriptionList>
-  </section>
+  <AboutSection />
+  <ProfileSection />
+  <LinksSection />
 </Layout>
