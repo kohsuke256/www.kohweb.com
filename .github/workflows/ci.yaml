@@ -21,6 +21,7 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      - run: corepack enable
       - uses: actions/setup-node@v3
         with:
           node-version-file: .node-version
@@ -28,6 +29,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run lint
-        run: pnpm run lint
+        run: pnpm run lint:check
       - name: Run prettier
-        run: pnpm run prettier
+        run: pnpm run prettier:check
