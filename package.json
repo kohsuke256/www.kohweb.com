@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
-    "prettier": "prettier --write ."
+    "lint:check": "eslint --max-warnings 0 .",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/check": "^0.8.3",
