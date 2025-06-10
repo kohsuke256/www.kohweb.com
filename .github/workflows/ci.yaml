@@ -14,7 +14,7 @@ on:
 
 jobs:
   formats:
-    name: ESLint
+    name: "ESLint & Prettier"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
