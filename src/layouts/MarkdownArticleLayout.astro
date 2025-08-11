@@ -12,7 +12,7 @@ const pubDate = new Date(frontmatter.pubDate);
   <article>
     <header class="border-accent-800 mt-4 mb-8 border-b pb-2">
       <small class="text-silver block text-end">
-        <time datetime={pubDate.toUTCString()}>
+        <time datetime={pubDate.toISOString()}>
           {
             pubDate.toLocaleDateString("ja-JP", {
               month: "2-digit",
