@@ -32,15 +32,6 @@
   clip-path: --value(--clip-path-*);
 }
 
-:root {
-  --color-black: #232629;
-  --color-white: #fcfcfc;
-  --color-gray-dark: #44474a;
-  --color-gray-light: #dddfe1;
-  --color-accent-dark: #0b6c90;
-  --color-accent-light: #42c5f5;
-}
-
 @supports (word-break: auto-phrase) {
   h1,
   h2,
