@@ -1,0 +1,30 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Heading2 from "@/components/common/heading/Heading2.astro";
+
+const articles = await Astro.glob("./articles/*.md");
+---
+
+<Layout title="Blog">
+  <Heading2>ブログ記事一覧</Heading2>
+  <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {
+      articles
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.pubDate).valueOf() -
+            new Date(a.frontmatter.pubDate).valueOf(),
+        )
+        .map((article) => (
+          <a href={article.url}>
+            <li class="border-silver bg-iron rounded-lg border p-4">
+              <article class="flex flex-col gap-2">
+                <h2 class="text-xl font-bold">{article.frontmatter.title}</h2>
+                <p>{article.frontmatter.description}</p>
+              </article>
+            </li>
+          </a>
+        ))
+    }
+  </ul>
+</Layout>
