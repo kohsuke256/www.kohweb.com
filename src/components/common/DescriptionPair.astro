@@ -9,12 +9,12 @@ const { etc } = Astro.props;
 ---
 
 <div
-  class="bg-silver text-steel col-1 grid place-items-center rounded-s-sm px-4 py-[0.5lh] font-bold"
+  class="bg-silver text-steel col-1 grid place-items-center rounded-s-sm px-4 py-4 font-bold"
 >
   <slot name="term" />
 </div>
 <div
-  class="descriptions bg-iron col-2 flex flex-col justify-center rounded-e-sm px-4 py-[0.25lh]"
+  class="descriptions bg-iron col-2 flex flex-col justify-center gap-1 rounded-e-sm px-4 py-2"
 >
   <slot name="descriptions" />
   {etc && <p class="opacity-75">etc.</p>}
