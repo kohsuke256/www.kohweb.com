@@ -1,47 +1,23 @@
 ---
+interface Props {
+  class?: string;
+}
 
+const { class: className } = Astro.props;
 ---
 
-<header class="header">
-  <a href="/"><h1>kohweb.com</h1></a>
+<header
+  class:list={[
+    "header grid grid-cols-[1fr] grid-rows-[auto_auto] place-items-center px-4 md:grid-cols-[auto_1fr] md:grid-rows-[auto] md:justify-items-end md:px-8",
+    className,
+  ]}
+>
+  <a href="/"><h1 class="my-3 text-3xl font-bold">kohweb.com</h1></a>
 
   <nav>
-    <ul>
+    <ul class="flex justify-end gap-4 text-xl">
       <li><a href="/">Home</a></li>
       <li><a href="/history">History</a></li>
     </ul>
   </nav>
 </header>
-
-<style>
-  .header {
-    display: grid;
-    place-items: center;
-
-    @media (width >= 800px) {
-      grid-template-columns: auto 1fr;
-      grid-template-rows: auto;
-      gap: 16px;
-      justify-items: right;
-    }
-    @media (width < 800px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
-    }
-
-    a {
-      display: contents;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: end;
-      list-style-type: none;
-      padding-inline: 0;
-      gap: 16px;
-      font-size: large;
-    }
-  }
-</style>

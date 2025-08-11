@@ -8,11 +8,4 @@ interface Props {
 const { src, alt = "", ...attrs } = Astro.props;
 ---
 
-<img src={src} alt={alt} />
-
-<style>
-  img {
-    display: inline-block;
-    height: 1em;
-  }
-</style>
+<img src={src} alt={alt} class="inline-block h-[1em]" />

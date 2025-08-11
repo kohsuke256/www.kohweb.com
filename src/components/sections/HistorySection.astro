@@ -1,22 +1,23 @@
 ---
 import ExternalLink from "../common/ExternalLink.astro";
+import Heading2 from "../common/heading/Heading2.astro";
 import HistoryRecord from "../common/HistoryRecord.astro";
 import HistoryRecordEvent from "../common/HistoryRecordEvent.astro";
 ---
 
 <section>
-  <h2>History</h2>
+  <Heading2>History</Heading2>
   <p>簡単に私の経歴を示しておきます。</p>
   <p>大した経験はありませんが、参考まで。</p>
   <HistoryRecord>
     <HistoryRecordEvent year={2013}>
-      <p>
+      <p class="text-xl">
         <ExternalLink href="https://scratch.mit.edu">Scratch</ExternalLink> にユーザー登録
       </p>
       <p>ある種、私のプログラミングはここから始まったといえる。</p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2014}>
-      <p>
+      <p class="text-xl">
         <ExternalLink href="https://scratch.mit.edu">Raspberry Pi</ExternalLink>
         に手を出す
       </p>
@@ -27,7 +28,7 @@ import HistoryRecordEvent from "../common/HistoryRecordEvent.astro";
       <p>ちょうどこの頃、日本でも Minecraft が流行していた。</p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2020} month={2}>
-      <p>
+      <p class="text-xl">
         <ExternalLink href="https://www.uec-programming.com"
           >とあるプログラミング教室</ExternalLink
         >に入会
@@ -35,17 +36,17 @@ import HistoryRecordEvent from "../common/HistoryRecordEvent.astro";
       <p>ただのお遊びだったプログラミングを本格的に学ぶきっかけとなった。</p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2020} month={3}>
-      <p>日本でも新型コロナウイルス感染症が流行しだす</p>
+      <p class="text-xl">日本でも新型コロナウイルス感染症が流行しだす</p>
       <p>それに伴いプログラミング教室がオンラインになった。</p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2020} month={10}>
-      <p>ITパスポート試験 合格</p>
+      <p class="text-xl">ITパスポート試験 合格</p>
       <p>
         高校受験の出願書類に書けるような資格がなにか欲しいと思っていた矢先、プログラミング教室で存在をこの資格の存在を知ったので取った。
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2021}>
-      <p>ウェブ技術について学習しだす</p>
+      <p class="text-xl">ウェブ技術について学習しだす</p>
       <p>
         <ExternalLink href="https://www.gakuryokuup.com"
           >とあるアプリコンテスト</ExternalLink
@@ -53,11 +54,11 @@ import HistoryRecordEvent from "../common/HistoryRecordEvent.astro";
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2022} month={6}>
-      <p>基本情報技術者試験 合格</p>
+      <p class="text-xl">基本情報技術者試験 合格</p>
       <p>高校生活にも慣れて時間ができたので取った。</p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2023} month={4}>
-      <p>競技プログラミングに取り組み始める</p>
+      <p class="text-xl">競技プログラミングに取り組み始める</p>
       <p>
         <ExternalLink href="https://atcoder.jp">AtCoder</ExternalLink> のコンテストに定期的に参加するようになる。
       </p>
@@ -72,20 +73,22 @@ import HistoryRecordEvent from "../common/HistoryRecordEvent.astro";
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2023} month={6}>
-      <p>応用情報技術者試験 合格</p>
+      <p class="text-xl">応用情報技術者試験 合格</p>
       <p>
         客観的に技術系の知識があることを示すため、より高度な情報処理技術者試験に挑戦した。
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2023} month={9}>
-      <p>文化祭用簡易的なデジタルサイネージ配信システムを構築</p>
+      <p class="text-xl">
+        文化祭用簡易的なデジタルサイネージ配信システムを構築
+      </p>
       <p>
         前年度末から動き出し、なんとか PR
         動画や人気投票の推移などを映すシステムをほぼワンオペで完成させた。高校の文化祭は、やりたいものをやったもん勝ち。青春だから。
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2024} month={4}>
-      <p>
+      <p class="text-xl">
         <ExternalLink href="https://www.uec.ac.jp/">電気通信大学</ExternalLink
         >に入学
       </p>
@@ -94,13 +97,15 @@ import HistoryRecordEvent from "../common/HistoryRecordEvent.astro";
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2024} month={7}>
-      <p>このサイトを制作開始</p>
+      <p class="text-xl">このサイトを制作開始</p>
       <p>
         <attr>VLL</attr> でも使われている技術を練習として実験的に使ってみた。
       </p>
     </HistoryRecordEvent>
     <HistoryRecordEvent year={2025}>
-      <p><attr>VLL</attr> 技術班長（開発チーム担当）になる</p>
+      <p class="text-xl">
+        <attr>VLL</attr> 技術班長（開発チーム担当）になる
+      </p>
       <p>特設サイトなんかの面倒を見ることになったわけですが、大丈夫かしら。</p>
     </HistoryRecordEvent>
   </HistoryRecord>
