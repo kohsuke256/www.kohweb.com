@@ -7,21 +7,10 @@ interface Props {
 const { href, ...attrs } = Astro.props;
 ---
 
-<a href={href} {...attrs}>
+<a
+  class="text-accent-600 bg-linear-to-r from-[currentColor] to-[currentColor] bg-size-[100%_1px] bg-bottom bg-no-repeat"
+  href={href}
+  {...attrs}
+>
   <slot />
 </a>
-
-<style>
-  a {
-    color: var(--color-accent-light);
-    text-decoration: inherit;
-    background-image: linear-gradient(
-      to right,
-      currentColor 0%,
-      currentColor 100%
-    );
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
-  }
-</style>

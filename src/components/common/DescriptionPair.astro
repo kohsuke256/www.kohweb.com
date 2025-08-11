@@ -8,40 +8,14 @@ interface Props {
 const { etc } = Astro.props;
 ---
 
-<div class="term">
+<div
+  class="bg-silver text-steel col-1 grid place-items-center rounded-s-sm px-4 py-[0.5lh] font-bold"
+>
   <slot name="term" />
 </div>
-<div class:list={["descriptions", { etc: etc }]}>
+<div
+  class="descriptions bg-iron col-2 flex flex-col justify-center rounded-e-sm px-4 py-[0.25lh]"
+>
   <slot name="descriptions" />
+  {etc && <p class="opacity-75">etc.</p>}
 </div>
-
-<style>
-  .term {
-    grid-column: 1;
-    display: grid;
-    place-items: center;
-    max-width: 40cqi;
-    padding-block: 0.5lh;
-    padding-inline: 1em;
-    border-radius: 0.25em 0 0 0.25em;
-    background-color: var(--color-gray-light);
-    color: var(--color-black);
-    font-weight: bold;
-  }
-  .descriptions {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-block: 0.25lh;
-    padding-inline: 1em;
-    border-radius: 0 0.25em 0.25em 0;
-    background-color: var(--color-gray-dark);
-
-    &.etc::after {
-      content: "etc.";
-      display: block;
-      opacity: 0.75;
-    }
-  }
-</style>

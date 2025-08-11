@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  description?: string;
+  title: string;
+}
+
+const { description, title } = Astro.props;
+
+const pageTitleSuffix = "kohweb.com";
+---
+
+<head>
+  <meta charset="UTF-8" />
+  {description && <meta name="description" content={description} />}
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title} | {pageTitleSuffix}</title>
+
+  <slot />
+</head>

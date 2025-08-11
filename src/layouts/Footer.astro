@@ -1,7 +1,16 @@
 ---
+interface Props {
+  class?: string;
+}
 
+const { class: className } = Astro.props;
 ---
 
-<footer class="footer">
-  <small>&copy; 2024 Kohsuke</small>
+<footer
+  class:list={[
+    "footer px-[max(16px, calc((100% - var(--max-main-width)) / 2))] py-12",
+    className,
+  ]}
+>
+  <small class="block text-center">&copy; 2024 Kohsuke</small>
 </footer>

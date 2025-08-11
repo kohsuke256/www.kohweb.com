@@ -1,5 +1,6 @@
 ---
 import Link from "./Link.astro";
+import InlineImage from "./InlineImage.astro";
 import ExternalLinkIcon from "../../assets/icons/external-link.svg";
 
 interface Props {
@@ -12,12 +13,5 @@ const { href, target = "_blank", ...attrs } = Astro.props;
 
 <Link {href} {target} {...attrs}>
   <slot />
-  <img src={ExternalLinkIcon.src} alt="外部リンク" />
+  <InlineImage src={ExternalLinkIcon.src} alt="外部リンク" />
 </Link>
-
-<style>
-  img {
-    display: inline-block;
-    height: 1em;
-  }
-</style>

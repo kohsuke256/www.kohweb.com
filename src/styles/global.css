@@ -1,9 +1,35 @@
 @import "tailwindcss";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@theme {
+  --color-steel: #232629;
+  --color-iron: #44474a;
+  --color-silver: #dddfe1;
+  --color-snow: #fcfcfc;
+  --color-accent-600: #42c5f5;
+  --color-accent-800: #0b6c90;
+
+  --clip-path-triangle-down: polygon(0 0, 100% 0, 50% 100%);
+
+  --grid-areas-body: "header header header" "left main right"
+    "footer footer footer";
+  --grid-area-header: header;
+  --grid-area-nav: nav;
+  --grid-area-main: main;
+  --grid-area-footer: footer;
+}
+
+@utility grid-areas-* {
+  grid-template-areas: --value([*]);
+  grid-template-areas: --value(--grid-areas-*);
+}
+@utility grid-area-* {
+  grid-area: --value([*]);
+  grid-area: --value(--grid-area-*);
+}
+
+@utility clip-path-* {
+  clip-path: --value([*]);
+  clip-path: --value(--clip-path-*);
 }
 
 :root {
@@ -15,70 +41,13 @@
   --color-accent-light: #42c5f5;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: system-ui, sans-serif;
-  background: var(--color-black);
-  color: var(--color-white);
-  line-height: 1.1lh;
-}
-
-body {
-  --max-main-width: 800px;
-  display: grid;
-  min-block-size: 100vh;
-  grid-template-columns: 1fr minmax(auto, var(--max-main-width)) 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 16px;
-  grid-template-areas: "header header header" "left main right" "footer footer footer";
-
-  .header {
-    grid-area: header;
-    padding-inline: clamp(
-      16px,
-      calc((100vw - var(--max-main-width)) / 2),
-      32px
-    );
-  }
-  .main {
-    grid-area: main;
-
-    @supports (word-break: auto-phrase) {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        word-break: auto-phrase;
-      }
-    }
-    h2 {
-      border-block-end: 1px solid var(--color-accent-light);
-      border-inline-start: 0.25em solid var(--color-accent-light);
-      padding-block-end: 4px;
-      padding-inline-start: 0.5em;
-    }
-    h3 {
-      border-block-end: 1px solid var(--color-accent-dark);
-      border-inline-start: 0.25em solid var(--color-accent-dark);
-      padding-block-end: 4px;
-      padding-inline-start: 0.5em;
-    }
-  }
-  .footer {
-    grid-area: footer;
-    padding-block: 2lh;
-    padding-inline: max(16px, calc((100% - var(--max-main-width)) / 2));
-
-    small {
-      display: block;
-      text-align: center;
-    }
+@supports (word-break: auto-phrase) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: auto-phrase;
   }
 }
