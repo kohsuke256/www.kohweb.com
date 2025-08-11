@@ -1,0 +1,31 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+const pubDate = new Date(frontmatter.pubDate);
+---
+
+<Layout
+  title={`${frontmatter.title} | Blog`}
+  description={frontmatter.description}
+>
+  <article>
+    <header class="border-accent-800 mt-4 mb-8 border-b pb-2">
+      <small class="text-silver block text-end">
+        <time datetime={pubDate.toISOString()}>
+          {
+            pubDate.toLocaleDateString("ja-JP", {
+              month: "2-digit",
+              day: "2-digit",
+              year: "numeric",
+            })
+          }
+        </time>
+      </small>
+      <h1 class="my-1 text-3xl font-bold">{frontmatter.title}</h1>
+    </header>
+    <main class="prose prose-invert prose-gray max-w-none">
+      <slot />
+    </main>
+  </article>
+</Layout>
